@@ -1,0 +1,29 @@
+void setup(){
+  size(1000,800);
+  PImage img;
+    img=loadImage("Space.jpg");
+  background(img);
+}
+
+void draw(){    
+  pushStyle();
+    fill(HSB,255,0,200);
+      arc(0, 400, 300,300,0,PI+PI);
+  popStyle();
+  
+  pushStyle();    
+    fill(HSB,160,230,100);
+      triangle(700,200, 750,190, 750,400); 
+  popStyle();
+  
+  pushStyle();
+    fill(RGB,#FF2626);
+    stroke(150);
+      bezier(100,350, 70,500, 50,400, 10,300);
+  popStyle();
+  
+  pushStyle();
+    fill(RGB, 46,255,249);
+      quad(690,420, 700,400, 700,300, 750,500);
+  popStyle();
+}
