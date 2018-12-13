@@ -1,0 +1,67 @@
+void setup(){
+  size(1000,800);
+  background(#73AAFD);
+}
+
+void draw(){
+//Sun
+  pushStyle();
+    fill(#F6FF00);
+    ellipse(500,0, 150, 150);
+  popStyle();
+
+//Beach
+  pushStyle();  
+    fill(#D1EE16);
+    rect(-10,600, 1020, 810);
+  popStyle(); 
+
+//Ocean
+  pushStyle();
+    fill(#2476F0);
+    rect(-10,350, 1020, 250);
+  popStyle();
+
+//Beach Blanket thingy
+  pushStyle();
+    fill(#FF0000);
+    for(int i=700; i<790; i=i+5){
+      line(10,i, 90,i);
+    }
+    line(10,700, 10,785);
+    line(90,700, 90,785);
+  popStyle();
+
+//Sun to sunset  
+  pushStyle();    
+    if (mousePressed == true) {
+      pushStyle();  
+        noStroke();
+        fill(#73AAFD);
+        rect(350,0, 300, 150);      
+      popStyle();      
+//Sunset      
+      pushStyle(); 
+       fill(#F6FF00);
+       ellipse(500,250, 150, 150);
+      popStyle(); 
+     }else{
+//Hide the Sunset       
+       noStroke();
+       fill(#73AAFD);
+       rect(350,150, 300, 200);
+     }
+  popStyle();    
+
+//Ripples  
+  pushStyle();      
+    if (keyPressed == true) {
+      fill(#2476F0);
+      stroke(#000000);
+      for(int i=1; i<10; i=i+1){
+        ellipse(500,500, 100,100);
+      }
+    }  
+  popStyle(); 
+
+}
