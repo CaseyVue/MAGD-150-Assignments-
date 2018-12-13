@@ -1,0 +1,138 @@
+int b=0;
+float c=#6E0A0A;
+float deg=10;
+float rad=10;
+float s=1;
+PVector pos;
+PVector vel;
+PVector size;
+
+void setup(){
+ size(1000, 800);
+ background(b);
+  
+  rect(0,400,width,200);
+  rect(0,400,25,200);
+  pos = new PVector(0,1);
+  vel=new PVector(.5,.5);
+  size= new PVector(70,50);
+  
+}
+
+void draw(){
+//change background from night to day  
+  background(b);
+  b=b+1;
+  
+//Ground   
+  fill(#E8D90E);
+    c=c+1;
+  rect(0,400,width,1000);
+  fill(#E91FD5);
+  rect(0,200,250,1000);
+  
+//Moon that cycles to day  
+  fill(#00FFFF);
+  scale(s);
+  ellipse(pos.x,pos.y,size.x,size.y);
+
+   if(s < 2){
+     s=s+.25; 
+   }
+
+   deg=deg+1;
+   rad = radians(deg);
+    
+  if(pos.x < width){
+     pos.add(1,1); 
+     vel.add(1,5);
+  } else {
+      pos.sub(100,10);
+  }
+  
+  if(pos.y > height){
+     pos.sub(100,10);
+  }
+  
+  if(pos.x > width){
+    size.sub(10,10);
+  }
+  
+  fill(#000000);
+  scale(s);
+  ellipse(pos.x,pos.y,size.x,size.y);
+
+   if(s < 2){
+     s=s+.25; 
+   }
+
+   deg=deg+1;
+   rad = radians(deg);
+    
+  if(pos.x < width){
+     pos.add(1,1); 
+     vel.add(1,5);
+  } else {
+      pos.sub(100,10);
+  }
+  
+  if(pos.y > height){
+     pos.sub(100,10);
+  }
+  
+  if(pos.x > width){
+    size.sub(10,10);
+  }
+  
+  fill(#0B03FF);
+  scale(s);
+  ellipse(pos.x,pos.y,size.x,size.y);
+
+   if(s < 2){
+     s=s+.25; 
+   }
+
+   deg=deg+1;
+   rad = radians(deg);
+    
+  if(pos.x < width){
+     pos.add(1,1); 
+     vel.add(1,5);
+  } else {
+      pos.sub(100,10);
+  }
+  
+  if(pos.y > height){
+     pos.sub(100,10);
+  }
+  
+  if(pos.x > width){
+    size.sub(10,10);
+  }
+  
+  fill(#FF0000);
+  scale(s);
+  ellipse(pos.x,pos.y,size.x,size.y);
+
+   if(s < 2){
+     s=s+.25; 
+   }
+
+   deg=deg+1;
+   rad = radians(deg);
+    
+  if(pos.x < width){
+     pos.add(1,1); 
+     vel.add(1,5);
+  } else {
+      pos.sub(100,10);
+  }
+  
+  if(pos.y > height){
+     pos.sub(100,10);
+  }
+  
+  if(pos.x > width){
+    size.sub(10,10);
+  }
+}
