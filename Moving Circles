@@ -1,0 +1,39 @@
+void setup(){
+    size(1000,800);
+    println("Hello");
+    surface.setResizable(true);
+}
+
+void draw(){    
+  pushStyle();
+    frameRate(1);
+    fill(#FF0101);
+    ellipse(mouseX, mouseY, w, h);
+    w = (w - 1) % (height / 5);
+    h = (h - 1) % (height / 5);
+  popStyle(); 
+
+  float q = max(100.0, 150.00);
+  float n = min(50,50);
+
+  float value = 110;
+  float m = map(value, 0, 100, -20, -10);
+  println(m); 
+  fill(#11FF00);
+  ellipse(pmouseX, q, pmouseY, n); 
+  println(mouseX + " : " + pmouseY);
+  ellipse(pmouseX, n, pmouseY, q);
+  println(pmouseX + " and " + mouseY);
+  
+  pushStyle();
+    frameRate(600);
+    fill(#1B01FF);
+    ellipse(Circle,400,200,200);
+    Circle = Circle + 50;
+  popStyle(); 
+}
+
+
+int Circle = -200;
+float w = 5;
+float h = 5;
